@@ -34,6 +34,8 @@ An opinionated Vue 3 starter template using Vite + TS.
 
 ## Quick Start
 
+> Requires Node >= 14
+
 ### GitHub Template
 
 [Create a repo from this template](https://github.com/ellielle/vute/generate)
@@ -53,7 +55,7 @@ yarn install
 
 ## Deploy on Netlify
 
-WIP
+Go to [Netlify](https://app.netlify.com/start) and select your clone.
 
 ## Usage
 

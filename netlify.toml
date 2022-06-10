@@ -3,7 +3,7 @@
   autoLaunch = false
 
 [build]
-  command = "yarn generate"
+  command = "yarn build"
   functions = "functions/"
   publish = "dist"
   environment = { NODE_VERSION = "18" }
