@@ -1,6 +1,5 @@
 <script setup lang="ts">
-  import { RouterLink, RouterView } from "vue-router";
-  import HelloWorld from "@/components/HelloWorld.vue";
+  import { toggleDark, isDark } from "@/composables";
 </script>
 
 <template>
@@ -19,6 +18,10 @@
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <button @click="toggleDark()">
+          <IconCarbonSun v-if="isDark" class="animate-spin"/>
+          <IconCarbonMoon v-else class="animate-bounce"/>
+        </button>
       </nav>
     </div>
   </header>
@@ -29,11 +32,32 @@
 <style>
   @import "@/assets/base.css";
 
+  .dark button {
+    color: white;
+  }
+
+  .dark button:hover {
+    color: hsla(160, 100%, 37%, 1);
+    transition: 0.4s;
+  }
+
+  .poke-sprite {
+    display: flex;
+    place-items: flex-end;
+  }
+
+  button {
+    align-self: end;
+    color: black;
+    background: none;
+    border: none;
+  }
+
   #app {
+    place-items: center;
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
-
     font-weight: normal;
   }
 
@@ -47,8 +71,7 @@
     margin: 0 auto 2rem;
   }
 
-  a,
-  .green {
+  a {
     text-decoration: none;
     color: hsla(160, 100%, 37%, 1);
     transition: 0.4s;
@@ -65,6 +88,7 @@
     font-size: 12px;
     text-align: center;
     margin-top: 2rem;
+    display: flex;
   }
 
   nav a.router-link-exact-active {
@@ -75,7 +99,7 @@
     background-color: transparent;
   }
 
-  nav a {
+  nav a, nav button {
     display: inline-block;
     padding: 0 1rem;
     border-left: 1px solid var(--color-border);
@@ -93,14 +117,13 @@
 
     #app {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
       padding: 0 2rem;
     }
 
     header {
       display: flex;
       place-items: center;
-      padding-right: calc(var(--section-gap) / 2);
     }
 
     header .wrapper {

@@ -1,46 +1,169 @@
-# vite-vue-template
+# Vute
 
-This template should help get you started developing with Vue 3 in Vite.
+An opinionated Vue 3 starter template using Vite + TS.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+- [x] ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), and [yarn](https://yarnpkg.com/)
 
-## Type Support for `.vue` Imports in TS
+- [x] 🍍 [State Management via Pinia](https://pinia.esm.dev/)
+  
+- [x] 🦾 [TypeScript](https://www.typescriptlang.org/)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+- [x] 📦 [Component auto importing (unplugin-vue-components)](https://github.com/antfu/unplugin-vue-components)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- [x] 📥 [API auto importing (unplugin-auto-import)](https://github.com/antfu/unplugin-auto-import)
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- [x] 🔥 Use the [new `<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
 
-## Customize configuration
+- [x] 🗂️ [Vue Composition Collection (VueUse)](https://vueuse.org/)
+  
+- [x] 🎨 [WindiCSS](https://github.com/windicss/windicss)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- [x] 🎊 [Icon Pack Component (unplugin-icons)](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
 
-## Project Setup
+- [x] ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest)
 
-```sh
-npm install
+- [x] 📡 HTTP requests with [axios](https://axios-http.com/)
+
+- [x] ☁️ Deploy on Netlify, zero-config
+
+- [x] 🌙 Switch Theme (light and dark)
+
+<br>
+
+## Quick Start
+
+### GitHub Template
+
+[Create a repo from this template](https://github.com/ellielle/vute/generate)
+
+### Clone to local
+
+```bash
+npx degit ellielle/vute my-app-name
+cd my-app-name
+yarn install
 ```
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
+## [Recommended IDE Setup](https://vuejs.org/guide/scaling-up/tooling.html#ide-support)
+
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+
+## Deploy on Netlify
+
+WIP
+
+## Usage
+
+### Theme Changer
+
+This template uses VueUse for [changing theme](https://vueuse.org/core/usedark/).
+
+```bash
+/src/composables/dark.ts
 ```
 
-### Type-Check, Compile and Minify for Production
+How to use :
 
-```sh
-npm run build
+```vue
+<script setup lang="ts">
+import { toggleDark, isDark } from '@/composables'
+</script>
+
+<template>
+  <button @click="toggleDark()">
+    <IconCarbonSun v-if="isDark" class="animate-spin"/>
+    <IconCarbonMoon v-else class="animate-bounce"/>
+  </button>
+</template>
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Icons
 
-```sh
-npm run test:unit
+This template is using unplugin-icons with unplugin-vue-components for auto importing.
+It uses the default prefix of `Icon`, and is currently only set to use Carbon icons (`@iconify-json/carbon`).
+
+
+You may view usable providers here: https://icones.js.org/  
+
+
+```vue
+<IconProviderIconName />
+
+<IconMdiChevronDown />
+
+<IconLogoGoogleIcon />
+```
+
+
+### API Auto Importing
+
+This template uses `unplugin-auto-import` for API auto importing. Example configuration:
+
+```ts
+AutoImport({
+  // targets to transform
+  include: [
+    /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+    /\.vue$/, /\.vue\?vue/, // .vue
+    /\.md$/, // .md
+  ],
+
+  // global imports to register
+  imports: [
+    // presets
+    'vue',
+    'vue-router',
+    // custom
+    {
+      '@vueuse/core': [
+        // named imports
+        'useMouse', // import { useMouse } from '@vueuse/core',
+        // alias
+        ['useFetch', 'useMyFetch'], // import { useFetch as useMyFetch } from '@vueuse/core',
+      ],
+      'axios': [
+        // default imports
+        ['default', 'axios'], // import { default as axios } from 'axios',
+      ],
+      '[package-name]': [
+        '[import-names]',
+        // alias
+        ['[from]', '[alias]'],
+      ],
+    },
+  ],
+
+  // Auto import for all module exports under directories
+  dirs: [
+    // './hooks',
+    // './composables'
+    // ...
+  ],
+
+  // Filepath to generate corresponding .d.ts file.
+  // Defaults to './auto-imports.d.ts' when `typescript` is installed locally.
+  // Set `false` to disable.
+  dts: './auto-imports.d.ts',
+
+  // Auto import inside Vue template
+  // see https://github.com/unjs/unimport/pull/15
+  vueTemplate: false,
+
+  // Custom resolvers, compatible with `unplugin-vue-components`
+  // see https://github.com/antfu/unplugin-auto-import/pull/23/
+  resolvers: [
+    /* ... */
+  ],
+
+  // Generate corresponding .eslintrc-auto-import.json file.
+  // eslint globals Docs - https://eslint.org/docs/user-guide/configuring/language-options#specifying-globals
+  eslintrc: {
+    enabled: false, // Default `false`
+    filepath: './.eslintrc-auto-import.json', // Default `./.eslintrc-auto-import.json`
+    globalsPropValue: true, // Default `true`, (true | false | 'readonly' | 'readable' | 'writable' | 'writeable')
+  },
+})
 ```
