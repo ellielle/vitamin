@@ -1,6 +1,9 @@
-# Vute
+# Vue3 + Vite Template
 
 An opinionated Vue 3 starter template using Vite + TS.
+
+Note: The default code will throw 2 type check errors. I'm still new to TS and 
+couldn't manage to fix them.
 
 ## Features
 
@@ -22,7 +25,7 @@ An opinionated Vue 3 starter template using Vite + TS.
 
 - [x] 🎊 [Icon Pack Component (unplugin-icons)](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
 
-- [x] ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest)
+- [x] ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest) and [MSW](https://github.com/mswjs/msw)
 
 - [x] 📡 HTTP requests with [axios](https://axios-http.com/)
 
