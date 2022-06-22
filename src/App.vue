@@ -30,7 +30,7 @@
 </template>
 
 <style>
-  @import "@/assets/base.css";
+  @import "@/assets/main.css";
 
   .dark button {
     color: white;

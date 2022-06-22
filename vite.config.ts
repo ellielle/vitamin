@@ -23,7 +23,7 @@ export default defineConfig({
         "@vueuse/core",
       ],
       dirs: ["src/composables", "src/stores"],
-      dts: "src/auto-imports.d.ts",
+      dts: "src/types/auto-imports.d.ts",
     }),
     Components({
       resolvers: [
@@ -35,7 +35,7 @@ export default defineConfig({
       extensions: ["vue"],
       include: [/\.vue$/, /\.vue\?vue/],
       exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
-      dts: "src/components.d.ts",
+      dts: "src/types/components.d.ts",
     }),
     Icons(),
     WindiCSS(),
