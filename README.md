@@ -41,12 +41,12 @@ couldn't manage to fix them.
 
 ### GitHub Template
 
-[Create a repo from this template](https://github.com/ellielle/vute/generate)
+[Create a repo from this template](https://github.com/ellielle/vue3-vite-template/generate)
 
 ### Clone to local
 
 ```bash
-npx degit ellielle/vute my-app-name
+npx degit ellielle/vue3-vite-template my-app-name
 cd my-app-name
 yarn install
 ```
