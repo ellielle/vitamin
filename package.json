@@ -1,6 +1,6 @@
 {
-  "name": "vute",
-  "version": "0.0.0",
+  "name": "vue3-vite-template",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "serve": "vite preview",
