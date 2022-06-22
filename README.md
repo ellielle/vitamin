@@ -55,7 +55,7 @@ yarn install
 
 ## Deploy on Netlify
 
-Go to [Netlify](https://app.netlify.com/start) and select your clone.
+Go to [Netlify](https://app.netlify.com/start), select your clone, and click `Deploy Site`.
 
 ## Usage
 

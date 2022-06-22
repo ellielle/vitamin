@@ -21,7 +21,6 @@ export default defineConfig({
         "vue",
         "vue-router",
         "@vueuse/core",
-        "@vueuse/head",
       ],
       dirs: ["src/composables", "src/stores"],
       dts: "src/auto-imports.d.ts",
@@ -45,5 +44,12 @@ export default defineConfig({
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
+  },
+  test: {
+    include: ["test/**/*.test.ts"],
+    deps: {
+      inline: ["@vue", "@vueuse"],
+    },
+    setupFiles: "test/mocks/server.js",
   },
 });

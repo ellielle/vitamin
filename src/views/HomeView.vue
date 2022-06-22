@@ -10,16 +10,17 @@
     try {
       const getPokemon = axios.get<PokeAPIResponse>(`https://pokeapi.co/api/v2/pokemon/${randomPokemonNumber}`);
       const pokeman = await getPokemon;
+      console.log(pokeman);
       return pokeman.data.sprites.front_default;
     } catch (error) {
       console.log(error);
+      return "error";
     }
   }
 
   async function pokefy() {
     const spriteElement = document.querySelector(".poke-sprite")! as HTMLDivElement;
     const pokemonUri = await getPokemon();
-    console.log("length: ", spriteElement);
     if (pokemonUri && spriteElement.children.length > 0) {
       for (let child of spriteElement.children) {
         spriteElement.removeChild(child);
