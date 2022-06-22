@@ -1,5 +1,10 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": [
+    "src/shims.d.ts",
+    "src/**/*",
+    "src/**/*.vue"
+  ],
   "exclude": [
     "node_modules",
     "dist"
@@ -11,7 +16,8 @@
     "target": "esnext",
     "lib": [
       "esnext",
-      "dom"
+      "DOM",
+      "DOM.Iterable"
     ],
     "allowJs": false,
     "esModuleInterop": false,
@@ -24,14 +30,10 @@
     //    "isolatedModules": true,
     //    "skipLibCheck": true,
     //    "resolveJsonModule": true,
-    "types": [
-      "vite",
-      "client"
-    ],
     "paths": {
       "@/*": [
         "./src/*"
       ]
-    }
+    },
   }
 }
