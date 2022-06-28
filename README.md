@@ -1,9 +1,8 @@
-# Vue3 + Vite Template
+# Vitamin
 
-An opinionated Vue 3 starter template using Vite + TS.
+An (relatively) minimal opinionated Vue 3 starter template using Vite + TS.
 
-Note: The default code will throw 2 type check errors. I'm still new to TS and 
-couldn't manage to fix them.
+Inspired by [Vitesse](https://github.com/antfu/vitesse)  
 
 ## Features
 
@@ -41,12 +40,12 @@ couldn't manage to fix them.
 
 ### GitHub Template
 
-[Create a repo from this template](https://github.com/ellielle/vue3-vite-template/generate)
+[Create a repo from this template](https://github.com/ellielle/vitamin/generate)
 
 ### Clone to local
 
 ```bash
-npx degit ellielle/vue3-vite-template my-app-name
+npx degit ellielle/vitamin my-app-name
 cd my-app-name
 yarn install
 ```
