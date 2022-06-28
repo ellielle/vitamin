@@ -12,28 +12,27 @@
   "compilerOptions": {
     "composite": true,
     "baseUrl": ".",
-    "module": "esnext",
-    "target": "esnext",
+    "module": "ESNext",
+    "target": "ESNext",
     "lib": [
-      "esnext",
+      "ESNext",
       "DOM",
       "DOM.Iterable"
     ],
     "allowJs": false,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "strict": true,
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    //    "isolatedModules": true,
-    //    "skipLibCheck": true,
-    //    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
     "paths": {
       "@/*": [
         "./src/*"
       ]
-    },
+    }
   }
 }
