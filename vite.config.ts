@@ -5,7 +5,8 @@ import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
-import WindiCSS from "vite-plugin-windicss";
+import Unocss from "unocss/vite";
+import { presetUno } from "@unocss/preset-uno";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -41,7 +42,11 @@ export default defineConfig({
       dts: "src/types/components.d.ts",
     }),
     Icons({ autoInstall: true }),
-    WindiCSS(),
+    Unocss({
+      presets: [
+        presetUno(),
+      ],
+    }),
   ],
   resolve: {
     alias: [{ find: "@", replacement: "/src" },

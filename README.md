@@ -14,11 +14,11 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse)
 
 - [x] 📥 [API auto importing (unplugin-auto-import)](https://github.com/antfu/unplugin-auto-import)
 
-- [x] 🔥 Use the [new `<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
+- [x] 🔥 Use the [`<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
 
 - [x] 🗂️ [Vue Composition Collection (VueUse)](https://vueuse.org/)
   
-- [x] 🎨 [WindiCSS](https://github.com/windicss/windicss)
+- [x] 🎨 [UnoCSS](https://github.com/unocss/unocss)
 
 - [x] 🎊 [Icon Pack Component (unplugin-icons)](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
 
@@ -28,7 +28,9 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse)
 
 - [x] 🌙 Switch Theme (light and dark)
 
-<br>
+## Demo
+
+WIP
 
 ## Quick Start
 
@@ -45,7 +47,6 @@ npx degit ellielle/vitamin my-app-name
 cd my-app-name
 yarn install
 ```
-
 
 ## [Recommended IDE Setup](https://vuejs.org/guide/scaling-up/tooling.html#ide-support)
 
@@ -64,7 +65,7 @@ Go to [Netlify](https://app.netlify.com/start), select your clone, and click `De
 This template uses VueUse for [changing theme](https://vueuse.org/core/usedark/).
 
 ```bash
-/src/composables/dark.ts
+/src/composables/useDark.ts
 ```
 
 How to use :
@@ -147,7 +148,6 @@ Components({
   version: 3
 })
 ```
-
 
 ### API Auto Importing
 

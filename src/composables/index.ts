@@ -1,1 +1,1 @@
-export * from "@composables/dark";
+export * from "@composables/useDark";
