@@ -1,16 +1,17 @@
-import { fileURLToPath, URL } from "url";
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
-import Vue from "@vitejs/plugin-vue";
+import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
-import WindiCSS from "vite-plugin-windicss";
+import Unocss from "unocss/vite";
+import { presetUno } from "@unocss/preset-uno";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    Vue({ include: [/\.vue$/] }),
+    vue({ include: [/\.vue$/] }),
     AutoImport({
       include: [
         /\.[tj]s?$/, // .ts, .tsx, .js, .jsx
@@ -20,9 +21,9 @@ export default defineConfig({
       imports: [
         "vue",
         "vue-router",
-        "@vueuse/core",
+        { "@vueuse/core": ["useDark", "useToggle"] },
       ],
-      dirs: ["src/composables", "src/stores"],
+      dirs: ["src/composables"],
       dts: "src/types/auto-imports.d.ts",
     }),
     Components({
@@ -31,19 +32,25 @@ export default defineConfig({
           prefix: "Icon",
         }),
       ],
-      dirs: ["src/components", "src/store"],
+      dirs: ["src/components"],
       extensions: ["vue"],
+      deep: true,
       include: [/\.vue$/, /\.vue\?vue/],
-      exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/],
+      exclude: [/[\\/]node_modules[\\/]/,
+        /[\\/]\.git[\\/]/,
+        /[\\/]\.nuxt[\\/]/],
       dts: "src/types/components.d.ts",
     }),
-    Icons(),
-    WindiCSS(),
+    Icons({ autoInstall: true }),
+    Unocss({
+      presets: [
+        presetUno(),
+      ],
+    }),
   ],
   resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
+    alias: [{ find: "@", replacement: "/src" },
+      { find: "@composables", replacement: "/src/composables" }],
   },
   test: {
     include: ["test/**/*.test.ts"],
