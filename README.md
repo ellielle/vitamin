@@ -6,9 +6,7 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse)
 
 ## Features
 
-- [x] ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), and [yarn](https://yarnpkg.com/)
-
-- [x] 🍍 [State Management via Pinia](https://pinia.esm.dev/)
+- [x] ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 4](https://github.com/vitejs/vite), and [yarn](https://yarnpkg.com/)
   
 - [x] 🦾 [TypeScript](https://www.typescriptlang.org/)
 
@@ -24,9 +22,7 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse)
 
 - [x] 🎊 [Icon Pack Component (unplugin-icons)](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
 
-- [x] ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest) and [MSW](https://github.com/mswjs/msw)
-
-- [x] 📡 HTTP requests with [axios](https://axios-http.com/)
+- [x] ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest) and mocking with [MSW](https://github.com/mswjs/msw)
 
 - [x] ☁️ Deploy on Netlify, zero-config
 
@@ -52,6 +48,8 @@ yarn install
 
 
 ## [Recommended IDE Setup](https://vuejs.org/guide/scaling-up/tooling.html#ide-support)
+
+I personally use [WebStorm](https://www.jetbrains.com/webstorm/) with this, but most people recommend:
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
 
@@ -101,10 +99,59 @@ You may view usable providers here: https://icones.js.org/
 <IconLogoGoogleIcon />
 ```
 
+### Component Auto Importing
+
+This template uses `unplugin-vue-components` to automatically import components. Configuration reference:
+
+```ts
+Components({
+  // relative paths to the directory to search for components.
+  dirs: ['src/components'],
+
+  // valid file extensions for components.
+  extensions: ['vue'],
+  // search for subdirectories
+  deep: true,
+  // resolvers for custom components
+  resolvers: [],
+
+  // generate `components.d.ts` global declarations,
+  // also accepts a path for custom filename
+  // default: `true` if package typescript is installed
+  dts: false,
+
+  // Allow subdirectories as namespace prefix for components.
+  directoryAsNamespace: false,
+  // Subdirectory paths for ignoring namespace prefixes
+  // works when `directoryAsNamespace: true`
+  globalNamespaces: [],
+
+  // auto import for directives
+  // default: `true` for Vue 3, `false` for Vue 2
+  // Babel is needed to do the transformation for Vue 2, it's disabled by default for performance concerns.
+  // To install Babel, run: `npm install -D @babel/parser`
+  directives: true,
+
+  // Transform path before resolving
+  importPathTransform: v => v,
+
+  // Allow for components to override other components with the same name
+  allowOverrides: false,
+
+  // filters for transforming targets
+  include: [/\.vue$/, /\.vue\?vue/],
+  exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
+
+  // Vue version of project. It will detect automatically if not specified.
+  // Acceptable value: 2 | 2.7 | 3
+  version: 3
+})
+```
+
 
 ### API Auto Importing
 
-This template uses `unplugin-auto-import` for API auto importing. Example configuration:
+This template uses `unplugin-auto-import` for API auto importing. Configuration reference:
 
 ```ts
 AutoImport({
@@ -139,7 +186,9 @@ AutoImport({
       ],
     },
   ],
-
+  // Enable auto import by filename for default module exports under directories
+  defaultExportByFilename: false,
+  
   // Auto import for all module exports under directories
   dirs: [
     // './hooks',
