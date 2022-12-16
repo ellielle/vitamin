@@ -17,8 +17,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  color: #213547;
+  color: #242424;
   background-color: #ffffff;
+  transition: background-color 0.3s ease-in;
 }
 
 /* Dark mode */
@@ -41,14 +42,19 @@
 .dark button {
   color: white;
 }
+
 /* Light mode */
 
 a:visited {
   color: blueviolet;
 }
 
+a {
+  color: #242424
+}
+
 button {
-  color: black;
+  color: #242424
 }
 
 /* Base config */
