@@ -6,7 +6,7 @@
 
 <template>
   <main>
-    <div class="wrapper">
+    <div class="mt-2rem">
       <button @click="pokefy()">Pokéfy</button>
       <div class="poke-sprite">
         <img :src="pokemonImage"
@@ -18,12 +18,6 @@
 </template>
 
 <style scoped>
-  .wrapper {
-    margin-top: 2rem;
-    display: grid;
-    justify-content: center;
-  }
-
   .poke-sprite {
     width: auto;
     height: 96px;

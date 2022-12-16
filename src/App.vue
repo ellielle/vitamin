@@ -5,7 +5,7 @@
 <template>
   <img
     alt="Vue logo"
-    class="logo"
+    class="block mx-auto"
     src="./assets/logo.svg"
     width="125"
     height="125"
@@ -13,7 +13,7 @@
 
   <div>
     <HelloWorld msg="You did it!" />
-    <nav>
+    <nav class="justify-center w-auto mt-2rem flex">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
       <button @click="toggleDark()">
@@ -28,31 +28,15 @@
 
 <style>
   @import "./main.css";
-
-  .logo {
-    display: block;
-    margin: 0 auto 2rem;
-  }
-
   @media (hover: hover) {
-    a:hover {
-      color: yellow;
+    .dark a:hover {
+      color: white;
+      transition: color 0.5s ease-out;
     }
   }
 
-  nav {
-    width: 100%;
-    justify-content: center;
-    margin-top: 2rem;
-    display: flex;
-  }
-
-  nav a.router-link-exact-active {
+  .dark nav a.router-link-exact-active {
     color: #42b883;
-  }
-
-  nav a.router-link-exact-active:hover {
-    background-color: transparent;
   }
 
   nav a, nav button {
