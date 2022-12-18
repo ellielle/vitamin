@@ -30,7 +30,7 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse)
 
 ## Demo
 
-[https://vitamin-e11.netlify.app/](https://vitamin-e11.netlify.app/)
+[Demo on codesandbox](https://codesandbox.io/s/github/ellielle/vitamin)
 
 ## Quick Start
 
