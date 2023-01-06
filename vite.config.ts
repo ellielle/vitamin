@@ -36,21 +36,24 @@ export default defineConfig({
       extensions: ["vue"],
       deep: true,
       include: [/\.vue$/, /\.vue\?vue/],
-      exclude: [/[\\/]node_modules[\\/]/,
+      exclude: [
+        /[\\/]node_modules[\\/]/,
         /[\\/]\.git[\\/]/,
-        /[\\/]\.nuxt[\\/]/],
+        /[\\/]\.nuxt[\\/]/,
+      ],
       dts: "src/types/components.d.ts",
     }),
     Icons({ autoInstall: true }),
     Unocss({
-      presets: [
-        presetUno(),
-      ],
+      presets: [presetUno()],
     }),
   ],
   resolve: {
-    alias: [{ find: "@", replacement: "/src" },
-      { find: "@composables", replacement: "/src/composables" }],
+    alias: [
+      { find: "@", replacement: "/src" },
+      { find: "@composables", replacement: "/src/composables" },
+      { find: "@components", replacement: "/src/components" },
+    ],
   },
   test: {
     include: ["test/**/*.test.ts"],
