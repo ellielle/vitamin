@@ -6,7 +6,7 @@ import Components from "unplugin-vue-components/vite";
 import Icons from "unplugin-icons/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import Unocss from "unocss/vite";
-import { presetUno } from "@unocss/preset-uno";
+import { presetUno, presetAttributify, presetIcons } from "unocss";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,12 +18,7 @@ export default defineConfig({
         /\.vue$/,
         /\.vue\?vue/, // .vue
       ],
-      imports: [
-        "vue",
-        "vue-router",
-        "vitest",
-        { "@vueuse/core": ["useDark", "useToggle"] },
-      ],
+      imports: ["vue", "vue-router", "vitest", { "@vueuse/core": ["useDark", "useToggle"] }],
       dirs: ["src/composables"],
       dts: "src/types/auto-imports.d.ts",
     }),
@@ -37,17 +32,11 @@ export default defineConfig({
       extensions: ["vue"],
       deep: true,
       include: [/\.vue$/, /\.vue\?vue/],
-      exclude: [
-        /[\\/]node_modules[\\/]/,
-        /[\\/]\.git[\\/]/,
-        /[\\/]\.nuxt[\\/]/,
-      ],
+      exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
       dts: "src/types/components.d.ts",
     }),
-    Icons({ autoInstall: true }),
-    Unocss({
-      presets: [presetUno()],
-    }),
+    Icons(),
+    Unocss({ presets: [presetUno(), presetIcons(), presetAttributify()] }),
   ],
   resolve: {
     alias: [

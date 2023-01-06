@@ -36,7 +36,7 @@
 }
 
 .dark a:visited {
-  color: #B84277;
+  color: #b84277;
 }
 
 .dark button {
@@ -50,11 +50,11 @@ a:visited {
 }
 
 a {
-  color: #242424
+  color: #242424;
 }
 
 button {
-  color: #242424
+  color: #242424;
 }
 
 /* Base config */
@@ -102,5 +102,3 @@ button:focus-visible {
   padding: 2rem;
   text-align: center;
 }
-
-

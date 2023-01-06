@@ -6,7 +6,7 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse)
 
 ## Features
 
-- [x] ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 4](https://github.com/vitejs/vite), and [yarn](https://yarnpkg.com/)
+- [x] ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 4](https://github.com/vitejs/vite)
   
 - [x] 🦾 [TypeScript](https://www.typescriptlang.org/)
 
@@ -20,7 +20,7 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse)
   
 - [x] 🎨 [UnoCSS](https://github.com/unocss/unocss)
 
-- [x] 🎊 [Icon Pack Component (unplugin-icons)](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
+- [x] 🎊 [Iconify Icons (unplugin-icons)](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
 
 - [x] ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest) and mocking with [MSW](https://github.com/mswjs/msw)
 
@@ -34,7 +34,7 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse)
 
 ## Quick Start
 
-> Requires Node >= 14
+> Requires Node >= 14.18+ or 16+
 
 ### GitHub Template
 
@@ -50,9 +50,7 @@ yarn install
 
 ## [Recommended IDE Setup](https://vuejs.org/guide/scaling-up/tooling.html#ide-support)
 
-I personally use [WebStorm](https://www.jetbrains.com/webstorm/) with this, but most people recommend:
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar).
 
 ## Deploy on Netlify
 
@@ -85,9 +83,12 @@ import { toggleDark, isDark } from '@/composables'
 
 ### Icons
 
-This template is using unplugin-icons with unplugin-vue-components for auto importing.
+This template is using `unplugin-icons` with `unplugin-vue-components` for auto importing.
 It uses the default prefix of `Icon`, and is currently only set to use Carbon icons (`@iconify-json/carbon`).
 
+You can also use classes to set icons: `i-carbon-dashboard`.
+
+Both methods are easily removed if you'd prefer one over the other, or neither.
 
 You may view usable providers here: https://icones.js.org/  
 

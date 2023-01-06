@@ -3,13 +3,7 @@
 </script>
 
 <template>
-  <img
-    alt="Vue logo"
-    class="block mx-auto"
-    src="./assets/logo.svg"
-    width="125"
-    height="125"
-  />
+  <img alt="Vue logo" src="./assets/logo.svg" width="125" height="125" />
 
   <div>
     <HelloWorld msg="You did it!" />
@@ -39,7 +33,8 @@
     color: #42b883;
   }
 
-  nav a, nav button {
+  nav a,
+  nav button {
     display: inline-block;
     padding: 0 1rem;
     border-left: 1px solid #ffffff;

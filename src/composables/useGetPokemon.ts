@@ -1,5 +1,5 @@
 interface PokeAPIResponse {
-  sprites: { front_default: string },
+  sprites: { front_default: string };
 }
 
 export const useGetPokemon = () => {
