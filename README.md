@@ -40,7 +40,7 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse)
 
 [Create a repo from this template](https://github.com/ellielle/vitamin/generate)
 
-### Clone to local
+### Clone to local without git history
 
 ```bash
 npx degit ellielle/vitamin my-app-name

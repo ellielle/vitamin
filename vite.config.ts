@@ -21,6 +21,7 @@ export default defineConfig({
       imports: [
         "vue",
         "vue-router",
+        "vitest",
         { "@vueuse/core": ["useDark", "useToggle"] },
       ],
       dirs: ["src/composables"],
@@ -57,6 +58,7 @@ export default defineConfig({
   },
   test: {
     include: ["test/**/*.test.ts"],
+    globals: true,
     deps: {
       inline: ["@vue", "@vueuse"],
     },
