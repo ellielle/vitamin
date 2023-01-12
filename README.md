@@ -30,7 +30,9 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse)
 
 ## Demo
 
-[Demo on codesandbox](https://codesandbox.io/s/github/ellielle/vitamin)
+<a href="https://stackblitz.com/github/ellielle/vitamin">
+<img alt="Open in StackBlitz" src="https://developer.stackblitz.com/img/open_in_stackblitz.svg" />
+</a>
 
 ## Quick Start
 
@@ -52,9 +54,9 @@ yarn install
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar).
 
-## Deploy on Netlify
+<!-- ## Deploy on Netlify
 
-Go to [Netlify](https://app.netlify.com/start), select your clone, and click `Deploy Site`.
+Go to [Netlify](https://app.netlify.com/start), select your clone, and click `Deploy Site`. -->
 
 ## Usage
 
