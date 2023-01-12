@@ -6,27 +6,25 @@ Inspired by [Vitesse](https://github.com/antfu/vitesse)
 
 ## Features
 
-- [x] ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 4](https://github.com/vitejs/vite)
+- ⚡️ [Vue 3](https://github.com/vuejs/vue-next) + [Vite 4](https://github.com/vitejs/vite)
   
-- [x] 🦾 [TypeScript](https://www.typescriptlang.org/)
+- 🔐 [TypeScript](https://www.typescriptlang.org/)
 
-- [x] 📦 [Component auto importing (unplugin-vue-components)](https://github.com/antfu/unplugin-vue-components)
+- 🪄 [Component auto importing (unplugin-vue-components)](https://github.com/antfu/unplugin-vue-components)
 
-- [x] 📥 [API auto importing (unplugin-auto-import)](https://github.com/antfu/unplugin-auto-import)
+- 📥 [API auto importing (unplugin-auto-import)](https://github.com/antfu/unplugin-auto-import)
 
-- [x] 🔥 Use the [`<script setup>` syntax](https://github.com/vuejs/rfcs/pull/227)
-
-- [x] 🗂️ [Vue Composition Collection (VueUse)](https://vueuse.org/)
+- 🗂️ [Vue Composition Collection (VueUse)](https://vueuse.org/)
   
-- [x] 🎨 [UnoCSS](https://github.com/unocss/unocss)
+- 🎨 [UnoCSS](https://github.com/unocss/unocss)
 
-- [x] 🎊 [Iconify Icons (unplugin-icons)](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
+- 🔆 [Iconify Icons (unplugin-icons)](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
 
-- [x] ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest) and mocking with [MSW](https://github.com/mswjs/msw)
+- ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest) and mocking with [MSW](https://github.com/mswjs/msw)
 
-- [x] ☁️ Deploy on Netlify, zero-config
+<!-- - ☁️ Deploy on Netlify, zero-config -->
 
-- [x] 🌙 Switch Theme (light and dark)
+- 🌙 Switch Theme (light and dark)
 
 ## Demo
 
